@@ -44,7 +44,7 @@
                 <a href="index.html#services" class="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Services</a>
                 <a href="index.html#about" class="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">About</a>
                 <a href="index.html#testimonials" class="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Testimonials</a>
-                <a href="index.html#contact" class="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Contact</a>
+                <a href="contact.html" class="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Contact</a>
             </div>
         </div>
     </nav>
@@ -53,7 +53,12 @@
     <section class="pt-20 pb-12 md:pb-20">
         <div class="relative bg-blue-600">
             <div class="absolute inset-0">
-                <img class="w-full h-full object-cover opacity-20" src="images/bg.jpg" alt="Cleaning background">
+                <img class="w-full h-full object-cover opacity-20" 
+                    src="images/bg.jpg" 
+                    srcset="images/bg.jpg 1920w, images/optimized/bg-1024.webp 1024w, images/optimized/bg-640.webp 640w"
+                    sizes="100vw"
+                    loading="lazy"
+                    alt="Cleaning background">
             </div>
             <div class="relative max-w-7xl mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8">
                 <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white text-center">
@@ -179,14 +184,24 @@
                     <!-- Service Images -->
                     <div class="grid grid-cols-2 gap-4">
                         <div class="relative rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/full-shot-people-cleaning-office.jpg" alt="Office Cleaning" class="w-full h-48 object-cover">
+                            <img src="images/full-shot-people-cleaning-office.jpg" 
+                                srcset="images/full-shot-people-cleaning-office.jpg 800w, images/optimized/full-shot-people-cleaning-office-400.webp 400w"
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                loading="lazy"
+                                alt="Office Cleaning" 
+                                class="w-full h-48 object-cover">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                             <div class="absolute bottom-0 left-0 p-4">
                                 <h4 class="text-white font-semibold">Office Cleaning</h4>
                             </div>
                         </div>
                         <div class="relative rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/carpet cleaning.jpg" alt="Carpet Cleaning" class="w-full h-48 object-cover">
+                            <img src="images/carpet cleaning.jpg" 
+                                srcset="images/carpet cleaning.jpg" 800w, images/optimized/carpet-cleaning-400.webp 400w"
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                loading="lazy"
+                                alt="Carpet Cleaning" 
+                                class="w-full h-48 object-cover">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                             <div class="absolute bottom-0 left-0 p-4">
                                 <h4 class="text-white font-semibold">Carpet Cleaning</h4>

@@ -1,24 +1,28 @@
 {
-  "name": "cleaning-service-website",
+  "name": "bell-mount-cleaners",
   "version": "1.0.0",
-  "description": "A beautiful interactive cleaning service website built with Tailwind CSS.",
-  "main": "src/index.html",
+  "description": "Professional cleaning services website for Bell Mount Cleaners",
+  "main": "index.js",
   "scripts": {
-    "build": "postcss src/css/styles.css -o dist/styles.css",
-    "watch": "postcss src/css/styles.css -o dist/styles.css --watch"
+    "dev": "live-server src",
+    "build": "postcss src/css/styles.css -o dist/css/styles.css",
+    "watch": "postcss src/css/styles.css -o dist/css/styles.css --watch"
   },
-  "dependencies": {
-    "tailwindcss": "^2.2.19",
-    "postcss": "^8.4.5",
-    "autoprefixer": "^10.4.2"
-  },
-  "devDependencies": {},
   "keywords": [
     "cleaning",
-    "service",
-    "website",
-    "tailwindcss"
+    "services",
+    "website"
   ],
-  "author": "Your Name",
-  "license": "MIT"
+  "author": "Bell Mount Cleaners",
+  "license": "ISC",
+  "dependencies": {
+    "@emailjs/browser": "^3.11.0",
+    "tailwindcss": "^2.2.19"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "live-server": "^1.2.2",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0"
+  }
 }

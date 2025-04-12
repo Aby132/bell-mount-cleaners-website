@@ -3,37 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Cleaning Service</title>
+    <title>Contact Us - Bell Mount Cleaners</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="css/styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+        })();
+    </script>
 </head>
-<body>
-    <!-- Include Header -->
-    <div id="header"></div>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <img src="images/1.png" alt="Bell Mount Cleaners Logo" class="h-12 md:h-16 w-auto">
+                        <span class="text-xl md:text-2xl font-bold text-blue-600">Bell Mount Cleaners</span>
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="mobile-menu-button text-gray-500 hover:text-gray-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html#home" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Home</a>
+                        <a href="index.html#services" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Services</a>
+                        <a href="index.html#about" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">About</a>
+                        <a href="index.html#testimonials" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Testimonials</a>
+                        <a href="contact.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <a href="quote.html" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Get a Quote</a>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Navigation -->
+        <div class="md:hidden mobile-menu hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html#home" class="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Home</a>
+                <a href="index.html#services" class="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Services</a>
+                <a href="index.html#about" class="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">About</a>
+                <a href="index.html#testimonials" class="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Testimonials</a>
+                <a href="contact.html" class="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Contact</a>
+                <a href="quote.html" class="block bg-blue-600 text-white px-3 py-2 rounded-md hover:bg-blue-700">Get a Quote</a>
+            </div>
+        </div>
+    </nav>
 
-    <main class="container mx-auto p-4">
-        <h1 class="text-3xl font-bold mb-4">Contact Us</h1>
-        <p class="mb-4">We'd love to hear from you! Please fill out the form below to get in touch.</p>
-        
-        <form action="mailto:your-email@example.com" method="post" enctype="text/plain" class="bg-white p-6 rounded shadow-md">
-            <div class="mb-4">
-                <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                <input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+    <!-- Hero Section -->
+    <section class="pt-20">
+        <div class="relative bg-blue-600">
+            <div class="absolute inset-0">
+                <img class="w-full h-full object-cover opacity-20" 
+                    src="images/bg.jpg" 
+                    srcset="images/bg.jpg 1920w, images/optimized/bg-1024.webp 1024w, images/optimized/bg-640.webp 640w"
+                    sizes="100vw"
+                    loading="lazy"
+                    alt="Cleaning background">
             </div>
-            <div class="mb-4">
-                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                <input type="email" id="email" name="email" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+            <div class="relative max-w-7xl mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white text-center">
+                    Contact Us
+                </h1>
+                <p class="mt-6 text-lg md:text-xl text-white max-w-3xl mx-auto text-center">
+                    Get in touch with us for any questions or to schedule a cleaning service
+                </p>
             </div>
-            <div class="mb-4">
-                <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-                <textarea id="message" name="message" rows="4" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"></textarea>
-            </div>
-            <button type="submit" class="bg-blue-500 text-white font-bold py-2 px-4 rounded">Send Message</button>
-        </form>
-    </main>
+        </div>
+    </section>
 
-    <!-- Include Footer -->
-    <div id="footer"></div>
+    <!-- Contact Section -->
+    <section class="py-12 md:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Contact Information</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-blue-600 text-2xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Address</h3>
+                                    <p class="mt-1 text-gray-600">12 Mugara Street<br>Chermside West, 4032</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-phone text-blue-600 text-2xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Phone</h3>
+                                    <p class="mt-1 text-gray-600">+61402899476</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-envelope text-blue-600 text-2xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Email</h3>
+                                    <p class="mt-1 text-gray-600">bellmountcleaners@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-clock text-blue-600 text-2xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Business Hours</h3>
+                                    <p class="mt-1 text-gray-600">Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 4:00 PM<br>Sunday: Closed</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Follow Us</h3>
+                            <div class="flex space-x-4">
+                                <a href="https://www.facebook.com/share/15bqMWZX62/?mibextid=wwXIfr" class="text-gray-600 hover:text-blue-600">
+                                    <i class="fab fa-facebook-f text-2xl"></i>
+                                </a>
+                                <a href="https://www.instagram.com/bellmountcleaners?igsh=MXA1NWRqNmluMXh1YQ%3D%3D&utm_source=qr" class="text-gray-600 hover:text-blue-600">
+                                    <i class="fab fa-instagram text-2xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                                <input type="text" name="name" id="name" required 
+                                    class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                <input type="email" name="email" id="email" required 
+                                    class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                            <input type="tel" name="phone" id="phone" required 
+                                class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="4" required 
+                                class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200"
+                                placeholder="How can we help you?"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" 
+                                class="w-full bg-blue-600 text-white py-3.5 px-6 rounded-lg hover:bg-blue-700 text-lg font-semibold transition duration-200 transform hover:scale-[1.02]">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                    <div id="formMessage" class="mt-4 text-center hidden"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto py-8 md:py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold">Bell Mount Cleaners</h3>
+                    <p class="mt-4 text-gray-400">Professional cleaning services for homes and businesses.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">Quick Links</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="index.html#home" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="index.html#services" class="text-gray-400 hover:text-white">Services</a></li>
+                        <li><a href="index.html#about" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">Contact Info</h3>
+                    <ul class="mt-4 space-y-2 text-gray-400">
+                        <li>12 Mugara Street</li>
+                        <li>Chermside West, 4032</li>
+                        <li>Phone: +61402899476</li>
+                        <li>Email: bellmountcleaners@gmail.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">Follow Us</h3>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="https://www.facebook.com/share/15bqMWZX62/?mibextid=wwXIfr" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/bellmountcleaners?igsh=MXA1NWRqNmluMXh1YQ%3D%3D&utm_source=qr" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p class="text-sm md:text-base">&copy; 2024 Bell Mount Cleaners. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                message: document.getElementById('message').value
+            };
+
+            const formMessage = document.getElementById('formMessage');
+            
+            // Send email using EmailJS
+            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+                to_email: "bellmountcleaners@gmail.com",
+                from_name: formData.name,
+                from_email: formData.email,
+                phone: formData.phone,
+                message: formData.message
+            })
+            .then(function(response) {
+                formMessage.textContent = "Message sent successfully! We'll get back to you soon.";
+                formMessage.className = "mt-4 text-center text-green-600";
+                formMessage.classList.remove('hidden');
+                document.getElementById('contactForm').reset();
+            })
+            .catch(function(error) {
+                formMessage.textContent = "Sorry, there was an error sending your message. Please try again later.";
+                formMessage.className = "mt-4 text-center text-red-600";
+                formMessage.classList.remove('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
