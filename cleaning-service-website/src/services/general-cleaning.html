@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>General Cleaning Services - Bell Mount Cleaners</title>
+    <title>General Cleaning - Bell Mount Cleaners</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="../css/styles.css" rel="stylesheet">
@@ -15,10 +15,17 @@
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
                     <a href="../index.html" class="flex items-center space-x-2">
-                        <img src="../images/1.png" alt="Bell Mount Cleaners Logo" class="h-16 w-auto">
-                        <span class="text-2xl font-bold text-blue-600">Bell Mount Cleaners</span>
+                        <img src="../images/1.png" alt="Bell Mount Cleaners Logo" class="h-12 md:h-16 w-auto">
+                        <span class="text-xl md:text-2xl font-bold text-blue-600">Bell Mount Cleaners</span>
                     </a>
                 </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="mobile-menu-button text-gray-500 hover:text-gray-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                <!-- Desktop Navigation -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a href="../index.html#home" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Home</a>
@@ -28,111 +35,141 @@
                         <a href="../index.html#contact" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Contact</a>
                     </div>
                 </div>
-                <div class="md:block">
+                <div class="hidden md:block">
                     <a href="../quote.html" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Get a Quote</a>
                 </div>
             </div>
         </div>
+        <!-- Mobile Navigation -->
+        <div class="md:hidden mobile-menu hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="../index.html#home" class="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Home</a>
+                <a href="../index.html#services" class="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Services</a>
+                <a href="../index.html#about" class="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">About</a>
+                <a href="../index.html#testimonials" class="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Testimonials</a>
+                <a href="../index.html#contact" class="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Contact</a>
+                <a href="../quote.html" class="block bg-blue-600 text-white px-3 py-2 rounded-md hover:bg-blue-700">Get a Quote</a>
+            </div>
+        </div>
     </nav>
 
-    <!-- Service Hero Section -->
-    <section class="pt-24 pb-12 bg-blue-600">
+    <!-- Hero Section -->
+    <section class="pt-20 pb-12 md:pb-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center text-white">
-                <h1 class="text-4xl font-extrabold sm:text-5xl lg:text-6xl">
+            <div class="text-center mb-8 md:mb-12">
+                <h1 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-900">
                     General Cleaning Services
                 </h1>
-                <p class="mt-6 text-xl max-w-3xl mx-auto">
-                    Comprehensive cleaning solutions for homes and businesses
+                <p class="mt-4 text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
+                    Professional cleaning services for homes and businesses. We provide regular maintenance cleaning to keep your space clean, healthy, and welcoming.
                 </p>
             </div>
         </div>
     </section>
 
     <!-- Main Content -->
-    <section class="py-16">
+    <section class="py-12 md:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <img src="../images/general-cleaning-large.jpg" alt="General Cleaning" class="rounded-lg shadow-xl w-full">
-                </div>
-                <div>
-                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Complete Cleaning Solutions</h2>
-                    <p class="text-lg text-gray-600 mb-6">
-                        Our general cleaning service provides comprehensive cleaning solutions for both residential and commercial spaces. We ensure every corner of your space is thoroughly cleaned and sanitized, creating a healthy and comfortable environment.
-                    </p>
-                    <div class="space-y-4">
-                        <h3 class="text-xl font-semibold text-gray-900">Our General Cleaning Includes:</h3>
-                        <ul class="space-y-3 text-gray-600">
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                <span>Dusting and wiping all surfaces</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                <span>Vacuuming and mopping floors</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                <span>Bathroom and kitchen cleaning</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                <span>Window and glass cleaning</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                <span>Trash removal and bin cleaning</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                <span>Air vent and light fixture dusting</span>
-                            </li>
-                        </ul>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Service Details -->
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mb-4">Our General Cleaning Process</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-broom text-blue-600 text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Surface Cleaning</h3>
+                                    <p class="mt-2 text-base text-gray-600">Thorough cleaning of all surfaces, including countertops, tables, and furniture.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-vacuum text-blue-600 text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Floor Care</h3>
+                                    <p class="mt-2 text-base text-gray-600">Vacuuming, sweeping, and mopping of all floor surfaces.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-spray-can text-blue-600 text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Bathroom Cleaning</h3>
+                                    <p class="mt-2 text-base text-gray-600">Sanitization and cleaning of all bathroom fixtures and surfaces.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-utensils text-blue-600 text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Kitchen Cleaning</h3>
+                                    <p class="mt-2 text-base text-gray-600">Cleaning of kitchen appliances, countertops, and surfaces.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-window-maximize text-blue-600 text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Window Cleaning</h3>
+                                    <p class="mt-2 text-base text-gray-600">Interior window cleaning for clear views and natural light.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-dust text-blue-600 text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Dusting</h3>
+                                    <p class="mt-2 text-base text-gray-600">Removing dust from all surfaces, including shelves and decorations.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Additional Features -->
-            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="text-blue-600 mb-4">
-                        <i class="fas fa-calendar-check text-3xl"></i>
+                <!-- Features -->
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mb-4">Why Choose Our General Cleaning Service</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <i class="fas fa-calendar-alt text-blue-600 text-2xl mb-4"></i>
+                                <h3 class="text-lg font-medium text-gray-900">Flexible Scheduling</h3>
+                                <p class="mt-2 text-base text-gray-600">Choose a cleaning schedule that works best for you.</p>
+                            </div>
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <i class="fas fa-leaf text-blue-600 text-2xl mb-4"></i>
+                                <h3 class="text-lg font-medium text-gray-900">Eco-Friendly</h3>
+                                <p class="mt-2 text-base text-gray-600">We use environmentally friendly cleaning products.</p>
+                            </div>
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <i class="fas fa-user-shield text-blue-600 text-2xl mb-4"></i>
+                                <h3 class="text-lg font-medium text-gray-900">Trusted Team</h3>
+                                <p class="mt-2 text-base text-gray-600">Our cleaners are background-checked and reliable.</p>
+                            </div>
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <i class="fas fa-award text-blue-600 text-2xl mb-4"></i>
+                                <h3 class="text-lg font-medium text-gray-900">Quality Guaranteed</h3>
+                                <p class="mt-2 text-base text-gray-600">We ensure consistent high-quality cleaning every time.</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Regular Service</h3>
-                    <p class="text-gray-600">
-                        Choose from weekly, bi-weekly, or monthly cleaning schedules to maintain cleanliness.
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="text-blue-600 mb-4">
-                        <i class="fas fa-spray-can text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Quality Products</h3>
-                    <p class="text-gray-600">
-                        We use premium, eco-friendly cleaning products for the best results.
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="text-blue-600 mb-4">
-                        <i class="fas fa-user-check text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Trusted Staff</h3>
-                    <p class="text-gray-600">
-                        Our professional cleaners are background-checked and fully trained.
-                    </p>
-                </div>
-            </div>
 
-            <!-- Call to Action -->
-            <div class="mt-16 text-center">
-                <h2 class="text-3xl font-bold text-gray-900 mb-6">Experience the Difference</h2>
-                <p class="text-xl text-gray-600 mb-8">
-                    Let us take care of your cleaning needs while you focus on what matters most.
-                </p>
-                <div class="space-x-4">
-                    <a href="../quote.html" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700">Get a Quote</a>
-                    <a href="../index.html#contact" class="inline-block bg-gray-200 text-gray-800 px-8 py-3 rounded-md hover:bg-gray-300">Contact Us</a>
+                    <!-- Call to Action -->
+                    <div class="bg-blue-600 text-white p-6 md:p-8 rounded-lg">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-4">Ready for a Cleaner Space?</h3>
+                        <p class="mb-6 text-base md:text-lg">Contact us today for a free quote and experience the difference of professional cleaning services.</p>
+                        <a href="../quote.html" class="bg-white text-blue-600 px-6 py-3 rounded-md text-base md:text-lg font-semibold hover:bg-gray-100 inline-block">
+                            Get a Free Quote
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -140,7 +177,7 @@
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white">
-        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto py-8 md:py-12 px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <h3 class="text-lg font-semibold">Bell Mount Cleaners</h3>
@@ -177,7 +214,7 @@
                 </div>
             </div>
             <div class="mt-8 border-t border-gray-800 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 Bell Mount Cleaners. All rights reserved.</p>
+                <p class="text-sm md:text-base">&copy; 2024 Bell Mount Cleaners. All rights reserved.</p>
             </div>
         </div>
     </footer>

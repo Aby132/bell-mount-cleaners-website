@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carpet Cleaning Services - Bell Mount Cleaners</title>
+    <title>Carpet Cleaning - Bell Mount Cleaners</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="../css/styles.css" rel="stylesheet">
@@ -15,10 +15,17 @@
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
                     <a href="../index.html" class="flex items-center space-x-2">
-                        <img src="../images/1.png" alt="Bell Mount Cleaners Logo" class="h-16 w-auto">
-                        <span class="text-2xl font-bold text-blue-600">Bell Mount Cleaners</span>
+                        <img src="../images/1.png" alt="Bell Mount Cleaners Logo" class="h-12 md:h-16 w-auto">
+                        <span class="text-xl md:text-2xl font-bold text-blue-600">Bell Mount Cleaners</span>
                     </a>
                 </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="mobile-menu-button text-gray-500 hover:text-gray-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                <!-- Desktop Navigation -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a href="../index.html#home" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Home</a>
@@ -28,111 +35,141 @@
                         <a href="../index.html#contact" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Contact</a>
                     </div>
                 </div>
-                <div class="md:block">
+                <div class="hidden md:block">
                     <a href="../quote.html" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Get a Quote</a>
                 </div>
             </div>
         </div>
+        <!-- Mobile Navigation -->
+        <div class="md:hidden mobile-menu hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="../index.html#home" class="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Home</a>
+                <a href="../index.html#services" class="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Services</a>
+                <a href="../index.html#about" class="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">About</a>
+                <a href="../index.html#testimonials" class="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Testimonials</a>
+                <a href="../index.html#contact" class="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Contact</a>
+                <a href="../quote.html" class="block bg-blue-600 text-white px-3 py-2 rounded-md hover:bg-blue-700">Get a Quote</a>
+            </div>
+        </div>
     </nav>
 
-    <!-- Service Hero Section -->
-    <section class="pt-24 pb-12 bg-blue-600">
+    <!-- Hero Section -->
+    <section class="pt-20 pb-12 md:pb-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center text-white">
-                <h1 class="text-4xl font-extrabold sm:text-5xl lg:text-6xl">
-                    Carpet Cleaning Services
+            <div class="text-center mb-8 md:mb-12">
+                <h1 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-900">
+                    Professional Carpet Cleaning Services
                 </h1>
-                <p class="mt-6 text-xl max-w-3xl mx-auto">
-                    Professional carpet cleaning for a fresher, healthier home
+                <p class="mt-4 text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
+                    Transform your carpets with our professional cleaning services. We use advanced techniques and eco-friendly products to restore your carpets to their original beauty.
                 </p>
             </div>
         </div>
     </section>
 
     <!-- Main Content -->
-    <section class="py-16">
+    <section class="py-12 md:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <img src="../images/carpet-cleaning-large.jpg" alt="Carpet Cleaning" class="rounded-lg shadow-xl w-full">
-                </div>
-                <div>
-                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Expert Carpet Care</h2>
-                    <p class="text-lg text-gray-600 mb-6">
-                        Our professional carpet cleaning service removes deep-seated dirt, stains, and allergens from your carpets. Using advanced equipment and eco-friendly cleaning solutions, we restore your carpets to their original beauty while extending their lifespan.
-                    </p>
-                    <div class="space-y-4">
-                        <h3 class="text-xl font-semibold text-gray-900">Our Carpet Cleaning Process:</h3>
-                        <ul class="space-y-3 text-gray-600">
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                <span>Pre-inspection and spot testing</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                <span>Thorough vacuuming to remove loose dirt</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                <span>Pre-treatment of stains and high-traffic areas</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                <span>Hot water extraction cleaning</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                <span>Spot treatment for stubborn stains</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                <span>Final grooming and speed drying</span>
-                            </li>
-                        </ul>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Service Details -->
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mb-4">Our Carpet Cleaning Process</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-search text-blue-600 text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Pre-inspection</h3>
+                                    <p class="mt-2 text-base text-gray-600">We carefully inspect your carpets to identify problem areas and determine the best cleaning approach.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-broom text-blue-600 text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Vacuuming</h3>
+                                    <p class="mt-2 text-base text-gray-600">Thorough vacuuming to remove surface dirt and debris before deep cleaning.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-spray-can text-blue-600 text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Pre-treatment</h3>
+                                    <p class="mt-2 text-base text-gray-600">Application of specialized cleaning solutions to break down tough stains and dirt.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-tint text-blue-600 text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Hot Water Extraction</h3>
+                                    <p class="mt-2 text-base text-gray-600">Deep cleaning using hot water extraction to remove embedded dirt and allergens.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-magic text-blue-600 text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Spot Treatment</h3>
+                                    <p class="mt-2 text-base text-gray-600">Targeted treatment for stubborn stains and spots.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-vector-square text-blue-600 text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-900">Final Grooming</h3>
+                                    <p class="mt-2 text-base text-gray-600">Professional grooming to restore carpet texture and appearance.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Additional Features -->
-            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="text-blue-600 mb-4">
-                        <i class="fas fa-tint text-3xl"></i>
+                <!-- Features -->
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mb-4">Why Choose Our Carpet Cleaning Service</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <i class="fas fa-shield-alt text-blue-600 text-2xl mb-4"></i>
+                                <h3 class="text-lg font-medium text-gray-900">Deep Cleaning</h3>
+                                <p class="mt-2 text-base text-gray-600">Removes deep-seated dirt and allergens for a healthier environment.</p>
+                            </div>
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <i class="fas fa-leaf text-blue-600 text-2xl mb-4"></i>
+                                <h3 class="text-lg font-medium text-gray-900">Safe Solutions</h3>
+                                <p class="mt-2 text-base text-gray-600">Eco-friendly cleaning products safe for your family and pets.</p>
+                            </div>
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <i class="fas fa-clock text-blue-600 text-2xl mb-4"></i>
+                                <h3 class="text-lg font-medium text-gray-900">Quick Drying</h3>
+                                <p class="mt-2 text-base text-gray-600">Advanced drying techniques for minimal disruption.</p>
+                            </div>
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <i class="fas fa-award text-blue-600 text-2xl mb-4"></i>
+                                <h3 class="text-lg font-medium text-gray-900">Expert Team</h3>
+                                <p class="mt-2 text-base text-gray-600">Trained professionals with years of experience.</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Deep Clean</h3>
-                    <p class="text-gray-600">
-                        Our hot water extraction method removes dirt from deep within carpet fibers.
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="text-blue-600 mb-4">
-                        <i class="fas fa-leaf text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Safe Solutions</h3>
-                    <p class="text-gray-600">
-                        We use eco-friendly cleaning solutions safe for children and pets.
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="text-blue-600 mb-4">
-                        <i class="fas fa-wind text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Quick Drying</h3>
-                    <p class="text-gray-600">
-                        Advanced equipment ensures faster drying times for your convenience.
-                    </p>
-                </div>
-            </div>
 
-            <!-- Call to Action -->
-            <div class="mt-16 text-center">
-                <h2 class="text-3xl font-bold text-gray-900 mb-6">Revive Your Carpets Today</h2>
-                <p class="text-xl text-gray-600 mb-8">
-                    Get professional carpet cleaning that makes a visible difference.
-                </p>
-                <div class="space-x-4">
-                    <a href="../quote.html" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700">Get a Quote</a>
-                    <a href="../index.html#contact" class="inline-block bg-gray-200 text-gray-800 px-8 py-3 rounded-md hover:bg-gray-300">Contact Us</a>
+                    <!-- Call to Action -->
+                    <div class="bg-blue-600 text-white p-6 md:p-8 rounded-lg">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-4">Ready to Transform Your Carpets?</h3>
+                        <p class="mb-6 text-base md:text-lg">Contact us today for a free quote and experience the difference of professional carpet cleaning.</p>
+                        <a href="../quote.html" class="bg-white text-blue-600 px-6 py-3 rounded-md text-base md:text-lg font-semibold hover:bg-gray-100 inline-block">
+                            Get a Free Quote
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -140,7 +177,7 @@
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white">
-        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto py-8 md:py-12 px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <h3 class="text-lg font-semibold">Bell Mount Cleaners</h3>
@@ -177,7 +214,7 @@
                 </div>
             </div>
             <div class="mt-8 border-t border-gray-800 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 Bell Mount Cleaners. All rights reserved.</p>
+                <p class="text-sm md:text-base">&copy; 2024 Bell Mount Cleaners. All rights reserved.</p>
             </div>
         </div>
     </footer>
