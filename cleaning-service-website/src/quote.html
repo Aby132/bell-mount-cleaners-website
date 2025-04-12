@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Quote - Bell Mount Cleaners</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center space-x-2">
+                        <img src="images/1.png" alt="Bell Mount Cleaners Logo" class="h-16 w-auto">
+                        <span class="text-2xl font-bold text-blue-600">Bell Mount Cleaners</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html#home" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Home</a>
+                        <a href="index.html#services" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Services</a>
+                        <a href="index.html#about" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">About</a>
+                        <a href="index.html#testimonials" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Testimonials</a>
+                        <a href="index.html#contact" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Contact</a>
+                    </div>
+                </div>
+                <div class="md:block">
+                    <a href="quote.html" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Get a Quote</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Quote Form Section -->
+    <section class="pt-32 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-extrabold text-gray-900 sm:text-5xl">
+                    Get Your Free Quote
+                </h1>
+                <p class="mt-4 text-xl text-gray-600">
+                    Fill out the form below and we'll get back to you within 24 hours
+                </p>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white shadow-xl rounded-lg overflow-hidden">
+                    <div class="p-6 sm:p-10">
+                        <form class="space-y-8">
+                            <!-- Personal Information -->
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-900 mb-4">Personal Information</h3>
+                                <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-2">
+                                    <div>
+                                        <label for="first-name" class="block text-sm font-medium text-gray-700">First name</label>
+                                        <input type="text" name="first-name" id="first-name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                    </div>
+                                    <div>
+                                        <label for="last-name" class="block text-sm font-medium text-gray-700">Last name</label>
+                                        <input type="text" name="last-name" id="last-name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                    </div>
+                                    <div>
+                                        <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
+                                        <input type="email" name="email" id="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                    </div>
+                                    <div>
+                                        <label for="phone" class="block text-sm font-medium text-gray-700">Phone number</label>
+                                        <input type="tel" name="phone" id="phone" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Service Selection -->
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-900 mb-4">Service Details</h3>
+                                <div class="space-y-6">
+                                    <div>
+                                        <label for="service-type" class="block text-sm font-medium text-gray-700">Service Type</label>
+                                        <select id="service-type" name="service-type" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                            <option value="">Select a service</option>
+                                            <option value="office">Office Cleaning</option>
+                                            <option value="bond">Bond Cleaning</option>
+                                            <option value="industrial">Industrial Cleaning</option>
+                                            <option value="general">General Cleaning</option>
+                                            <option value="carpet">Carpet Cleaning</option>
+                                            <option value="pressure">Pressure Wash</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="property-type" class="block text-sm font-medium text-gray-700">Property Type</label>
+                                        <select id="property-type" name="property-type" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                            <option value="">Select property type</option>
+                                            <option value="house">House</option>
+                                            <option value="apartment">Apartment</option>
+                                            <option value="office">Office</option>
+                                            <option value="retail">Retail Space</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="property-size" class="block text-sm font-medium text-gray-700">Property Size (sq ft)</label>
+                                        <input type="number" name="property-size" id="property-size" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                    </div>
+                                    <div>
+                                        <label for="cleaning-frequency" class="block text-sm font-medium text-gray-700">Cleaning Frequency</label>
+                                        <select id="cleaning-frequency" name="cleaning-frequency" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                            <option value="">Select frequency</option>
+                                            <option value="one-time">One-time Cleaning</option>
+                                            <option value="weekly">Weekly</option>
+                                            <option value="bi-weekly">Bi-weekly</option>
+                                            <option value="monthly">Monthly</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Additional Information -->
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-900 mb-4">Additional Information</h3>
+                                <div class="space-y-6">
+                                    <div>
+                                        <label for="preferred-date" class="block text-sm font-medium text-gray-700">Preferred Cleaning Date</label>
+                                        <input type="date" name="preferred-date" id="preferred-date" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                    </div>
+                                    <div>
+                                        <label for="special-requests" class="block text-sm font-medium text-gray-700">Special Requests</label>
+                                        <textarea id="special-requests" name="special-requests" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"></textarea>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex items-center h-5">
+                                            <input id="terms" name="terms" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                        </div>
+                                        <div class="ml-3 text-sm">
+                                            <label for="terms" class="font-medium text-gray-700">I agree to the terms and conditions</label>
+                                            <p class="text-gray-500">By submitting this form, you agree to our privacy policy and terms of service.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <button type="submit" class="w-full bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                    Submit Quote Request
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold">Bell Mount Cleaners</h3>
+                    <p class="mt-4 text-gray-400">Professional cleaning services for homes and businesses.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">Quick Links</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="index.html#home" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="index.html#services" class="text-gray-400 hover:text-white">Services</a></li>
+                        <li><a href="index.html#about" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="index.html#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">Contact Info</h3>
+                    <ul class="mt-4 space-y-2 text-gray-400">
+                        <li>12 Mugara Street</li>
+                        <li>Chermside West, 4032</li>
+                        <li>Phone: +61402899476</li>
+                        <li>Email: bellmountcleaners@gmail.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">Follow Us</h3>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="https://www.facebook.com/share/15bqMWZX62/?mibextid=wwXIfr" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/bellmountcleaners?igsh=MXA1NWRqNmluMXh1YQ%3D%3D&utm_source=qr" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Bell Mount Cleaners. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
