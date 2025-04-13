@@ -17,44 +17,43 @@
 <body class="bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white shadow-lg fixed w-full z-50">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <div class="flex-shrink-0 flex items-center">
                     <a href="/" class="flex items-center space-x-2">
-                        <img src="images/1.png" alt="Bell Mount Cleaners Logo" class="h-12 md:h-16 w-auto">
-                        <span class="text-xl md:text-2xl font-bold text-blue-600">Bell Mount Cleaners</span>
+                        <img src="images/optimized/1.webp" alt="Bell Mount Cleaners Logo" class="h-10 w-auto sm:h-12 md:h-16">
+                        <span class="text-lg sm:text-xl md:text-2xl font-bold text-blue-600 whitespace-nowrap">Bell Mount Cleaners</span>
                     </a>
                 </div>
                 <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button type="button" class="mobile-menu-button text-gray-500 hover:text-gray-600 focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
+                <div class="flex md:hidden">
+                    <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl sm:text-2xl"></i>
                     </button>
                 </div>
                 <!-- Desktop Navigation -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#home" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Home</a>
-                        <a href="#services" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Services</a>
-                        <a href="#about" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">About</a>
-                        <a href="#testimonials" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Testimonials</a>
-                        <a href="contact.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Contact</a>
+                <div class="hidden md:flex md:items-center md:space-x-4 lg:space-x-8">
+                    <div class="flex space-x-4 lg:space-x-8">
+                        <a href="#home" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm lg:text-base font-medium">Home</a>
+                        <a href="#services" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm lg:text-base font-medium">Services</a>
+                        <a href="#about" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm lg:text-base font-medium">About</a>
+                        <a href="#testimonials" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm lg:text-base font-medium">Testimonials</a>
+                        <a href="contact.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm lg:text-base font-medium">Contact</a>
                     </div>
-                </div>
-                <div class="hidden md:block">
-                    <a href="quote.html" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Get a Quote</a>
+                    <a href="quote.html" class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm lg:text-base font-medium hover:bg-blue-700 transition duration-150 ease-in-out ml-4">Get a Quote</a>
                 </div>
             </div>
         </div>
         <!-- Mobile Navigation -->
         <div class="md:hidden mobile-menu hidden">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#home" class="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Home</a>
-                <a href="#services" class="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Services</a>
-                <a href="#about" class="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">About</a>
-                <a href="#testimonials" class="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Testimonials</a>
-                <a href="contact.html" class="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">Contact</a>
-                <a href="quote.html" class="block bg-blue-600 text-white px-3 py-2 rounded-md hover:bg-blue-700">Get a Quote</a>
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+                <a href="#home" class="block text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#services" class="block text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="#about" class="block text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#testimonials" class="block text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-2 rounded-md text-base font-medium">Testimonials</a>
+                <a href="contact.html" class="block text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                <a href="quote.html" class="block bg-blue-600 text-white hover:bg-blue-700 px-3 py-2 rounded-md text-base font-medium mt-4">Get a Quote</a>
             </div>
         </div>
     </nav>
@@ -62,8 +61,11 @@
     <!-- Hero Section -->
     <section id="home" class="pt-20">
         <div class="relative bg-blue-600">
-            <div class="absolute inset-0">
-                <img class="w-full h-full object-cover opacity-20" src="images/bg.jpg" alt="Cleaning background">
+            <div class="absolute">
+                <img class="w-full h-full object-cover" 
+                    src="images/optimized/bg.webp" 
+                    alt="Cleaning background" 
+                    loading="lazy">
             </div>
             <div class="relative max-w-7xl mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8">
                 <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white text-center">
@@ -94,7 +96,7 @@
             </div>
             <div class="mt-8 md:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img class="w-full h-48 object-cover" src="images/full-shot-people-cleaning-office.jpg" alt="Office Cleaning">
+                    <img class="w-full h-48 object-cover" src="images/optimized/full-shot-people-cleaning-office.webp" alt="Office Cleaning" loading="lazy">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-gray-900">Office Cleaning</h3>
                         <p class="mt-2 text-gray-600">Professional cleaning services for offices and commercial spaces, ensuring a pristine work environment.</p>
@@ -102,7 +104,7 @@
                     </div>
                 </div>
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img class="w-full h-48 object-cover" src="images/medium-shot-woman-cleaning-home.jpg" alt="Bond Cleaning">
+                    <img class="w-full h-48 object-cover" src="images/optimized/medium-shot-woman-cleaning-home.webp" alt="Bond Cleaning" loading="lazy">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-gray-900">Bond Cleaning</h3>
                         <p class="mt-2 text-gray-600">End of lease cleaning services to ensure you get your bond back, with attention to every detail.</p>
@@ -110,7 +112,7 @@
                     </div>
                 </div>
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img class="w-full h-48 object-cover" src="images/industial cleaning.jpg" alt="Industrial Cleaning">
+                    <img class="w-full h-48 object-cover" src="images/optimized/industial cleaning.webp" alt="Industrial Cleaning" loading="lazy">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-gray-900">Industrial Cleaning</h3>
                         <p class="mt-2 text-gray-600">Heavy-duty cleaning solutions for industrial facilities and warehouses.</p>
@@ -118,7 +120,7 @@
                     </div>
                 </div>
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img class="w-full h-48 object-cover" src="images/general cleaning.jpg" alt="General Cleaning">
+                    <img class="w-full h-48 object-cover" src="images/optimized/general cleaning.webp" alt="General Cleaning" loading="lazy">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-gray-900">General Cleaning</h3>
                         <p class="mt-2 text-gray-600">Regular cleaning services for homes and businesses to maintain a clean and healthy environment.</p>
@@ -126,7 +128,7 @@
                     </div>
                 </div>
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img class="w-full h-48 object-cover" src="images/carpet cleaning.jpg" alt="Carpet Cleaning">
+                    <img class="w-full h-48 object-cover" src="images/optimized/carpet cleaning.webp" alt="Carpet Cleaning" loading="lazy">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-gray-900">Carpet Cleaning</h3>
                         <p class="mt-2 text-gray-600">Deep carpet cleaning services to remove stains, odors, and restore your carpets to their best condition.</p>
@@ -134,7 +136,7 @@
                     </div>
                 </div>
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img class="w-full h-48 object-cover" src="images/pressure wash.jpg" alt="Pressure Wash">
+                    <img class="w-full h-48 object-cover" src="images/optimized/pressure wash.webp" alt="Pressure Wash" loading="lazy">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-gray-900">Pressure Wash</h3>
                         <p class="mt-2 text-gray-600">High-pressure cleaning for exterior surfaces, driveways, and patios to remove tough dirt and grime.</p>
@@ -187,7 +189,7 @@
                     </div>
                 </div>
                 <div class="mt-8 lg:mt-0">
-                    <img class="rounded-lg shadow-xl w-full" src="images/cleaning team.jpg" alt="Our cleaning team">
+                    <img class="rounded-lg shadow-xl w-full" src="images/optimized/cleaning team.webp" alt="Our cleaning team" loading="lazy">
                 </div>
             </div>
         </div>
@@ -381,6 +383,25 @@
 
     <script src="js/main.js"></script>
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            // Only add event listeners if the elements exist
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            }
+        });
+
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             

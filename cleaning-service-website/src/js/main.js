@@ -30,98 +30,15 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     }
 });
 
-// Testimonial Slider Animation
 document.addEventListener('DOMContentLoaded', function() {
-    const slider = document.querySelector('.testimonial-slider');
-    if (!slider) return;
-
-    let currentPosition = 0;
-    let autoScrollInterval;
-    const slideWidth = 320; // Width of each slide including gap
-    const slides = slider.querySelectorAll('.testimonial-slide');
-    const totalSlides = slides.length;
-    let isDragging = false;
-    let startX;
-    let currentTranslate = 0;
-    let prevTranslate = 0;
-
-    function updateSliderPosition() {
-        slider.style.transform = `translateX(${currentPosition}px)`;
-    }
-
-    function startAutoScroll() {
-        if (autoScrollInterval) return; // Prevent multiple intervals
-        
-        autoScrollInterval = setInterval(() => {
-            if (isDragging) return; // Don't auto-scroll while dragging
-            
-            currentPosition -= slideWidth;
-            if (currentPosition <= -slideWidth * (totalSlides - 1)) {
-                currentPosition = 0;
-            }
-            updateSliderPosition();
-        }, 5000);
-    }
-
-    function stopAutoScroll() {
-        clearInterval(autoScrollInterval);
-        autoScrollInterval = null;
-    }
-
-    // Touch and mouse events
-    slider.addEventListener('mousedown', dragStart);
-    slider.addEventListener('touchstart', dragStart);
-    slider.addEventListener('mouseup', dragEnd);
-    slider.addEventListener('touchend', dragEnd);
-    slider.addEventListener('mouseleave', dragEnd);
-    slider.addEventListener('mousemove', drag);
-    slider.addEventListener('touchmove', drag);
-
-    function dragStart(e) {
-        isDragging = true;
-        startX = e.type === 'mousedown' ? e.pageX : e.touches[0].clientX;
-        prevTranslate = currentPosition;
-        stopAutoScroll();
-    }
-
-    function drag(e) {
-        if (!isDragging) return;
-        e.preventDefault();
-        const currentX = e.type === 'mousemove' ? e.pageX : e.touches[0].clientX;
-        const diff = currentX - startX;
-        currentPosition = prevTranslate + diff;
-        updateSliderPosition();
-    }
-
-    function dragEnd() {
-        isDragging = false;
-        const movedBy = currentPosition - prevTranslate;
-        
-        if (Math.abs(movedBy) > 100) {
-            if (movedBy > 0) {
-                currentPosition = Math.min(0, currentPosition + slideWidth);
-            } else {
-                currentPosition = Math.max(-slideWidth * (totalSlides - 1), currentPosition - slideWidth);
-            }
-        } else {
-            currentPosition = prevTranslate;
-        }
-        
-        updateSliderPosition();
-        startAutoScroll();
-    }
-
-    // Start auto-scroll
-    startAutoScroll();
-});
-
-// Mobile Menu Functionality
-document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu functionality
     const mobileMenuButton = document.querySelector('.mobile-menu-button');
     const mobileMenu = document.querySelector('.mobile-menu');
     
     if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', function() {
+        // Toggle mobile menu
+        mobileMenuButton.addEventListener('click', function(e) {
+            e.stopPropagation();
             mobileMenu.classList.toggle('hidden');
         });
         
@@ -131,5 +48,116 @@ document.addEventListener('DOMContentLoaded', function() {
                 mobileMenu.classList.add('hidden');
             }
         });
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    }
+
+    // Contact form functionality
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                message: document.getElementById('message').value
+            };
+
+            const formMessage = document.getElementById('formMessage');
+            
+            // Simple validation
+            if (!formData.name || !formData.email || !formData.message) {
+                formMessage.textContent = "Please fill in all required fields.";
+                formMessage.className = "mt-4 text-center text-red-600";
+                formMessage.classList.remove('hidden');
+                return;
+            }
+
+            // Email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(formData.email)) {
+                formMessage.textContent = "Please enter a valid email address.";
+                formMessage.className = "mt-4 text-center text-red-600";
+                formMessage.classList.remove('hidden');
+                return;
+            }
+
+            // If EmailJS is available, send the email
+            if (typeof emailjs !== 'undefined') {
+                emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+                    to_email: "bellmountcleaners@gmail.com",
+                    from_name: formData.name,
+                    from_email: formData.email,
+                    phone: formData.phone,
+                    message: formData.message
+                })
+                .then(function(response) {
+                    formMessage.textContent = "Message sent successfully! We'll get back to you soon.";
+                    formMessage.className = "mt-4 text-center text-green-600";
+                    formMessage.classList.remove('hidden');
+                    contactForm.reset();
+                })
+                .catch(function(error) {
+                    formMessage.textContent = "Sorry, there was an error sending your message. Please try again later.";
+                    formMessage.className = "mt-4 text-center text-red-600";
+                    formMessage.classList.remove('hidden');
+                });
+            }
+        });
+    }
+
+    // Testimonial slider functionality
+    const testimonialContainer = document.querySelector('.testimonial-container');
+    if (testimonialContainer) {
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.transform = `translateX(${100 * (i - index)}%)`;
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Auto-rotate slides every 5 seconds
+        setInterval(nextSlide, 5000);
+        showSlide(currentSlide);
+    }
+});
+
+// Mobile menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    
+    if (!mobileMenu.classList.contains('hidden') && 
+        !mobileMenu.contains(event.target) && 
+        !mobileMenuButton.contains(event.target)) {
+        mobileMenu.classList.add('hidden');
     }
 });

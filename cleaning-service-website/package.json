@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "live-server src",
     "build": "postcss src/css/styles.css -o dist/css/styles.css",
-    "watch": "postcss src/css/styles.css -o dist/css/styles.css --watch"
+    "watch": "postcss src/css/styles.css -o dist/css/styles.css --watch",
+    "optimize-images": "node scripts/optimize-images.js"
   },
   "keywords": [
     "cleaning",
@@ -23,6 +24,7 @@
     "autoprefixer": "^10.4.16",
     "live-server": "^1.2.2",
     "postcss": "^8.4.31",
-    "postcss-cli": "^10.1.0"
+    "postcss-cli": "^10.1.0",
+    "sharp": "^0.32.6"
   }
 }
