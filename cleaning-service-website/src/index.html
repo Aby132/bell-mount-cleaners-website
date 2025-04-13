@@ -196,97 +196,151 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="bg-gray-50 py-12 md:py-16">
-        <div class="container mx-auto px-4">
+    <section class="bg-green-100 py-12 md:py-16">
+        <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12">What Our Clients Say</h2>
-            <div class="testimonial-container">
-                <div class="testimonial-slider">
-                    <!-- Testimonial 1 -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card">
-                            <div class="mb-4">
-                                <h4 class="font-semibold text-lg">James Wilson</h4>
-                                <p class="text-gray-600 text-sm">Homeowner in Chermside</p>
+            <div class="relative">
+                <!-- Scroll Controls -->
+                <button class="absolute -left-4 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 focus:outline-none z-10" onclick="scrollTestimonials('left')">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="absolute -right-4 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 focus:outline-none z-10" onclick="scrollTestimonials('right')">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <div class="testimonial-container overflow-hidden mx-auto">
+                    <div class="testimonial-slider flex gap-4 transition-transform duration-700 ease-in-out">
+                        <!-- Testimonial Cards Container -->
+                        <div class="testimonial-group flex gap-4 min-w-full">
+                            <!-- Testimonial 1 -->
+                            <div class="testimonial-card w-1/4 bg-white p-4 rounded-lg shadow-lg">
+                                <div class="mb-3">
+                                    <h4 class="font-semibold text-base">Sarah Johnson</h4>
+                                    <p class="text-gray-600 text-xs">Homeowner in Ascot</p>
+                                </div>
+                                <p class="text-gray-700 text-sm">"The carpet cleaning service was exceptional! They removed years of stains and the team was so professional."</p>
+                                <div class="mt-3 text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
                             </div>
-                            <p class="text-gray-700">"I was amazed at how thorough the carpet cleaning was. They removed stains I thought were permanent, and the team was so professional. My carpets look brand new!"</p>
-                            <div class="mt-4 text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+
+                            <!-- Testimonial 2 -->
+                            <div class="testimonial-card w-1/4 bg-white p-4 rounded-lg shadow-lg">
+                                <div class="mb-3">
+                                    <h4 class="font-semibold text-base">Michael Chen</h4>
+                                    <p class="text-gray-600 text-xs">Office Manager</p>
+                                </div>
+                                <p class="text-gray-700 text-sm">"We've been using Bell Mount Cleaners for our office for over a year. Their consistency is impressive."</p>
+                                <div class="mt-3 text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+
+                            <!-- Testimonial 3 -->
+                            <div class="testimonial-card w-1/4 bg-white p-4 rounded-lg shadow-lg">
+                                <div class="mb-3">
+                                    <h4 class="font-semibold text-base">Emma Thompson</h4>
+                                    <p class="text-gray-600 text-xs">Restaurant Owner</p>
+                                </div>
+                                <p class="text-gray-700 text-sm">"The deep cleaning service was outstanding. They worked around our schedule perfectly."</p>
+                                <div class="mt-3 text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+
+                            <!-- Testimonial 4 -->
+                            <div class="testimonial-card w-1/4 bg-white p-4 rounded-lg shadow-lg">
+                                <div class="mb-3">
+                                    <h4 class="font-semibold text-base">David Wilson</h4>
+                                    <p class="text-gray-600 text-xs">Property Manager</p>
+                                </div>
+                                <p class="text-gray-700 text-sm">"We trust Bell Mount Cleaners with all our rental properties. Their bond cleaning service is thorough."</p>
+                                <div class="mt-3 text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Testimonial 2 -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card">
-                            <div class="mb-4">
-                                <h4 class="font-semibold text-lg">Lisa Thompson</h4>
-                                <p class="text-gray-600 text-sm">Office Manager</p>
+                        <!-- Second Group -->
+                        <div class="testimonial-group flex gap-4 min-w-full">
+                            <!-- Testimonial 5 -->
+                            <div class="testimonial-card w-1/4 bg-white p-4 rounded-lg shadow-lg">
+                                <div class="mb-3">
+                                    <h4 class="font-semibold text-base">Lisa Patel</h4>
+                                    <p class="text-gray-600 text-xs">Retail Store Owner</p>
+                                </div>
+                                <p class="text-gray-700 text-sm">"Their industrial cleaning service transformed our store. The team was efficient and professional."</p>
+                                <div class="mt-3 text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
                             </div>
-                            <p class="text-gray-700">"We've been using Bell Mount Cleaners for our office space for over a year now. Their consistency and attention to detail are impressive. They always go above and beyond!"</p>
-                            <div class="mt-4 text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Testimonial 3 -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card">
-                            <div class="mb-4">
-                                <h4 class="font-semibold text-lg">David Chen</h4>
-                                <p class="text-gray-600 text-sm">Restaurant Owner</p>
+                            <!-- Testimonial 6 -->
+                            <div class="testimonial-card w-1/4 bg-white p-4 rounded-lg shadow-lg">
+                                <div class="mb-3">
+                                    <h4 class="font-semibold text-base">James Anderson</h4>
+                                    <p class="text-gray-600 text-xs">Homeowner in Hamilton</p>
+                                </div>
+                                <p class="text-gray-700 text-sm">"The pressure washing service was amazing! Our driveway looks brand new. Very professional team."</p>
+                                <div class="mt-3 text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
                             </div>
-                            <p class="text-gray-700">"The deep cleaning service they provided for our restaurant was exceptional. They worked around our schedule and left the place spotless. Highly recommended!"</p>
-                            <div class="mt-4 text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Testimonial 4 -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card">
-                            <div class="mb-4">
-                                <h4 class="font-semibold text-lg">Sarah O'Connor</h4>
-                                <p class="text-gray-600 text-sm">Property Manager</p>
+                            <!-- Testimonial 7 -->
+                            <div class="testimonial-card w-1/4 bg-white p-4 rounded-lg shadow-lg">
+                                <div class="mb-3">
+                                    <h4 class="font-semibold text-base">Sophie Williams</h4>
+                                    <p class="text-gray-600 text-xs">Business Owner</p>
+                                </div>
+                                <p class="text-gray-700 text-sm">"The general cleaning service is consistently excellent. They pay attention to every detail."</p>
+                                <div class="mt-3 text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
                             </div>
-                            <p class="text-gray-700">"We trust Bell Mount Cleaners with all our rental properties. Their bond cleaning service is thorough and reliable. They've never let us down!"</p>
-                            <div class="mt-4 text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Testimonial 5 -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card">
-                            <div class="mb-4">
-                                <h4 class="font-semibold text-lg">Michael Patel</h4>
-                                <p class="text-gray-600 text-sm">Retail Store Owner</p>
-                            </div>
-                            <p class="text-gray-700">"Their industrial cleaning service transformed our store. The team was efficient, professional, and left everything sparkling clean. Will definitely use them again!"</p>
-                            <div class="mt-4 text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                            <!-- Testimonial 8 -->
+                            <div class="testimonial-card w-1/4 bg-white p-4 rounded-lg shadow-lg">
+                                <div class="mb-3">
+                                    <h4 class="font-semibold text-base">Robert Taylor</h4>
+                                    <p class="text-gray-600 text-xs">Warehouse Manager</p>
+                                </div>
+                                <p class="text-gray-700 text-sm">"The industrial cleaning team did an outstanding job. They handled our large space efficiently."</p>
+                                <div class="mt-3 text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -434,6 +488,75 @@
                 formMessage.classList.remove('hidden');
             });
         });
+
+        // Testimonial Slider Functionality
+        let currentGroup = 0;
+        const groups = document.querySelectorAll('.testimonial-group');
+        const slider = document.querySelector('.testimonial-slider');
+        let autoScrollInterval;
+        let isScrolling = false;
+
+        function scrollTestimonials(direction) {
+            if (isScrolling) return;
+            isScrolling = true;
+
+            if (direction === 'left') {
+                currentGroup = Math.max(0, currentGroup - 1);
+            } else {
+                currentGroup = Math.min(groups.length - 1, currentGroup + 1);
+            }
+            updateSliderPosition();
+
+            setTimeout(() => {
+                isScrolling = false;
+            }, 700);
+        }
+
+        function updateSliderPosition() {
+            const offset = -currentGroup * 100;
+            slider.style.transform = `translateX(${offset}%)`;
+        }
+
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(() => {
+                if (!isScrolling) {
+                    if (currentGroup >= groups.length - 1) {
+                        currentGroup = 0;
+                    } else {
+                        currentGroup++;
+                    }
+                    updateSliderPosition();
+                }
+            }, 4000);
+        }
+
+        function stopAutoScroll() {
+            clearInterval(autoScrollInterval);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            startAutoScroll();
+            
+            const testimonialContainer = document.querySelector('.testimonial-container');
+            testimonialContainer.addEventListener('mouseenter', stopAutoScroll);
+            testimonialContainer.addEventListener('mouseleave', startAutoScroll);
+        });
     </script>
+
+    <style>
+        .testimonial-container {
+            width: calc(100% + 2rem);
+            margin-left: -1rem;
+            margin-right: -1rem;
+            padding: 0 1rem;
+        }
+        .testimonial-group {
+            display: flex;
+            gap: 1rem;
+        }
+        .testimonial-card {
+            flex: 1;
+        }
+    </style>
 </body>
 </html>
