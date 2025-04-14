@@ -7,28 +7,13 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="css/styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("XmzKfyZFxt5VYFIZG"); // EmailJS public key
+        })();
+    </script>
     <script src="js/main.js" defer></script>
-    <script src="js/main.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const mobileMenuButton = document.querySelector('.mobile-menu-button');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        
-        // Only add event listeners if the elements exist
-        if (mobileMenuButton && mobileMenu) {
-            mobileMenuButton.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
-            });
-            
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', function(event) {
-                if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-        }
-    });
-</script>
 </head>
 <body class="bg-gray-50">
   <!-- Navigation -->
@@ -100,12 +85,33 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <!-- Form -->
-                <div class="bg-white rounded-xl shadow-lg p-8 md:p-10">
+                <div class="bg-white rounded-xl shadow-lg p-8 md:p-10 relative">
+                    <!-- Loading Overlay -->
+                    <div id="loadingOverlay" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                        <div class="bg-white p-6 rounded-lg shadow-xl text-center">
+                            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+                            <p class="mt-4 text-gray-700">Sending quote request...</p>
+                        </div>
+                    </div>
+
+                    <!-- Success/Error Popup -->
+                    <div id="formMessage" class="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg shadow-xl z-50 max-w-md w-full mx-auto">
+                        <div class="text-center">
+                            <div id="formMessageIcon" class="mx-auto mb-4">
+                                <!-- Icon will be inserted by JavaScript -->
+                            </div>
+                            <p id="formMessageText" class="text-lg"></p>
+                            <button onclick="closeFormMessage()" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-150">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+
                     <div class="text-center mb-8">
                         <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Request a Quote</h2>
                         <p class="mt-2 text-gray-600">Fill in your details and we'll get back to you shortly</p>
                     </div>
-                    <form class="space-y-6">
+                    <form id="quoteForm" class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
@@ -280,6 +286,41 @@
             </div>
         </div>
     </footer>
+
+    <style>
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .popup-enter {
+            animation: popupEnter 0.3s ease-out forwards;
+        }
+        @keyframes popupEnter {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+        #formMessage {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            width: 400px;
+        }
+    </style>
 
     <script src="js/main.js"></script>
 </body>

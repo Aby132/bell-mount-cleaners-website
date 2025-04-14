@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
         (function() {
-            emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+            emailjs.init("XmzKfyZFxt5VYFIZG"); // EmailJS public key
         })();
     </script>
 </head>
@@ -196,7 +196,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="bg-green-100 py-12 md:py-16">
+    <section id="testimonials" class="bg-green-100 py-12 md:py-16">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12">What Our Clients Say</h2>
             <div class="relative">
@@ -360,7 +360,28 @@
                     Get in touch with us for a free quote or to schedule a cleaning service
                 </p>
             </div>
-            <div class="mt-8 md:mt-12 max-w-lg mx-auto">
+            <div class="mt-8 md:mt-12 max-w-lg mx-auto relative">
+                <!-- Loading Overlay -->
+                <div id="loadingOverlay" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                    <div class="bg-white p-6 rounded-lg shadow-xl text-center">
+                        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+                        <p class="mt-4 text-gray-700">Sending message...</p>
+                    </div>
+                </div>
+
+                <!-- Success/Error Popup -->
+                <div id="formMessage" class="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg shadow-xl z-50 max-w-md w-full mx-auto">
+                    <div class="text-center">
+                        <div id="formMessageIcon" class="mx-auto mb-4">
+                            <!-- Icon will be inserted by JavaScript -->
+                        </div>
+                        <p id="formMessageText" class="text-lg"></p>
+                        <button onclick="closeFormMessage()" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-150">
+                            Close
+                        </button>
+                    </div>
+                </div>
+
                 <form id="contactForm" class="grid grid-cols-1 gap-y-4 md:gap-y-6">
                     <div>
                         <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
@@ -384,10 +405,9 @@
                         </button>
                     </div>
                 </form>
-                <div id="formMessage" class="mt-4 text-center hidden"></div>
-                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white">
@@ -455,108 +475,6 @@
                 });
             }
         });
-
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                message: document.getElementById('message').value
-            };
-
-            const formMessage = document.getElementById('formMessage');
-            
-            // Send email using EmailJS
-            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-                to_email: "bellmountcleaners@gmail.com",
-                from_name: formData.name,
-                from_email: formData.email,
-                phone: formData.phone,
-                message: formData.message
-            })
-            .then(function(response) {
-                formMessage.textContent = "Message sent successfully! We'll get back to you soon.";
-                formMessage.className = "mt-4 text-center text-green-600";
-                formMessage.classList.remove('hidden');
-                document.getElementById('contactForm').reset();
-            })
-            .catch(function(error) {
-                formMessage.textContent = "Sorry, there was an error sending your message. Please try again later.";
-                formMessage.className = "mt-4 text-center text-red-600";
-                formMessage.classList.remove('hidden');
-            });
-        });
-
-        // Testimonial Slider Functionality
-        let currentGroup = 0;
-        const groups = document.querySelectorAll('.testimonial-group');
-        const slider = document.querySelector('.testimonial-slider');
-        let autoScrollInterval;
-        let isScrolling = false;
-
-        function getCardsPerView() {
-            if (window.innerWidth < 768) return 1;
-            if (window.innerWidth < 1024) return 2;
-            return 4;
-        }
-
-        function scrollTestimonials(direction) {
-            if (isScrolling) return;
-            isScrolling = true;
-
-            const cardsPerView = getCardsPerView();
-            if (direction === 'left') {
-                currentGroup = Math.max(0, currentGroup - 1);
-            } else {
-                currentGroup = Math.min(Math.ceil(groups.length * 4 / cardsPerView) - 1, currentGroup + 1);
-            }
-            updateSliderPosition();
-
-            setTimeout(() => {
-                isScrolling = false;
-            }, 700);
-        }
-
-        function updateSliderPosition() {
-            const cardsPerView = getCardsPerView();
-            const offset = -currentGroup * 100;
-            slider.style.transform = `translateX(${offset}%)`;
-        }
-
-        function startAutoScroll() {
-            autoScrollInterval = setInterval(() => {
-                if (!isScrolling) {
-                    const cardsPerView = getCardsPerView();
-                    if (currentGroup >= Math.ceil(groups.length * 4 / cardsPerView) - 1) {
-                        currentGroup = 0;
-                    } else {
-                        currentGroup++;
-                    }
-                    updateSliderPosition();
-                }
-            }, 4000);
-        }
-
-        function stopAutoScroll() {
-            clearInterval(autoScrollInterval);
-        }
-
-        function handleResize() {
-            currentGroup = 0;
-            updateSliderPosition();
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            startAutoScroll();
-            
-            const testimonialContainer = document.querySelector('.testimonial-container');
-            testimonialContainer.addEventListener('mouseenter', stopAutoScroll);
-            testimonialContainer.addEventListener('mouseleave', startAutoScroll);
-
-            window.addEventListener('resize', handleResize);
-        });
     </script>
 
     <style>
@@ -588,6 +506,38 @@
             .testimonial-group > *:nth-child(n+3) {
                 display: none;
             }
+        }
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .popup-enter {
+            animation: popupEnter 0.3s ease-out forwards;
+        }
+        @keyframes popupEnter {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+        #formMessage {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            width: 400px;
         }
     </style>
 </body>
