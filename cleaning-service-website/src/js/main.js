@@ -54,57 +54,37 @@ document.addEventListener('DOMContentLoaded', function() {
     // Contact form functionality
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                message: document.getElementById('message').value
-            };
-
-            const formMessage = document.getElementById('formMessage');
-            const formMessageText = document.getElementById('formMessageText');
-            const formMessageIcon = document.getElementById('formMessageIcon');
-            const loadingOverlay = document.getElementById('loadingOverlay');
-            
-            // Simple validation
-            if (!formData.name || !formData.email || !formData.message) {
-                showMessage('error', 'Please fill in all required fields.');
-                return;
-            }
-
-            // Email validation
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(formData.email)) {
-                showMessage('error', 'Please enter a valid email address.');
-                return;
-            }
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
 
             // Show loading overlay
-            loadingOverlay.classList.remove('hidden');
+            document.getElementById('loadingOverlay').classList.remove('hidden');
 
-            // If EmailJS is available, send the email
-            if (typeof emailjs !== 'undefined') {
-                emailjs.send("service_6ua284p", "template_449up3l", {
-                    name: formData.name,
-                    email: formData.email,
-                    phone: formData.phone,
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                phone: document.getElementById('phone').value.trim(),
+                message: document.getElementById('message').value.trim()
+            };
+
+            try {
+                const response = await emailjs.send('service_6ua284p', 'template_wkyx519', {
+                    from_name: formData.name,
+                    from_email: formData.email,
+                    phone_number: formData.phone,
                     message: formData.message
-                })
-                .then(function(response) {
-                    // Hide loading overlay
-                    loadingOverlay.classList.add('hidden');
-                    showMessage('success', "Message sent successfully! We'll get back to you soon.");
-                    contactForm.reset();
-                })
-                .catch(function(error) {
-                    // Hide loading overlay
-                    loadingOverlay.classList.add('hidden');
-                    showMessage('error', "Sorry, there was an error sending your message. Please try again later.");
-                    console.error("EmailJS Error:", error);
                 });
+
+                if (response.status === 200) {
+                    showMessage('Message sent successfully! We will get back to you soon.', 'success');
+                    contactForm.reset();
+                }
+            } catch (error) {
+                console.error('EmailJS error:', error);
+                showMessage('Failed to send message. Please try again.', 'error');
+            } finally {
+                document.getElementById('loadingOverlay').classList.add('hidden');
             }
         });
     }
@@ -165,25 +145,19 @@ function showMessage(message, type) {
     const formMessageText = document.getElementById('formMessageText');
     const formMessageIcon = document.getElementById('formMessageIcon');
 
-    // Clear any existing timeouts
-    if (window.messageTimeout) {
-        clearTimeout(window.messageTimeout);
+    formMessageText.textContent = message;
+    
+    // Set icon based on message type
+    if (type === 'success') {
+        formMessageIcon.innerHTML = '<i class="fas fa-check-circle text-green-500 text-4xl"></i>';
+        formMessageText.className = 'text-green-600 mt-2';
+    } else {
+        formMessageIcon.innerHTML = '<i class="fas fa-exclamation-circle text-red-500 text-4xl"></i>';
+        formMessageText.className = 'text-red-600 mt-2';
     }
 
-    formMessageText.textContent = message;
-    formMessageIcon.innerHTML = type === 'success' 
-        ? '<i class="fas fa-check-circle text-green-500 text-4xl"></i>'
-        : '<i class="fas fa-exclamation-circle text-red-500 text-4xl"></i>';
-    
     formMessage.classList.remove('hidden');
     formMessage.classList.add('popup-enter');
-
-    // Auto-hide message after 5 seconds for success messages
-    if (type === 'success') {
-        window.messageTimeout = setTimeout(() => {
-            closeFormMessage();
-        }, 5000);
-    }
 }
 
 // Function to close message popup
